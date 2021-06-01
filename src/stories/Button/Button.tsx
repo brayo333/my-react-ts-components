@@ -5,6 +5,7 @@ export interface ButtonProps {
   primary?: boolean;
   type?: "circle" | "rounded" | "slightlyRounded" | "box";
   border?: string;
+  width?: string;
   backgroundColor?: string;
   color?: string;
   label?: string;
@@ -19,6 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   type,
   border,
   backgroundColor,
+  width,
   color,
   label,
   hasIcon = false,
@@ -33,16 +35,12 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       type="button"
       className={["buttonStyle", `buttonStyle--${type}`, mode].join(" ")}
-      style={{ backgroundColor, color, border }}
+      style={{ width, backgroundColor, color, border }}
       {...props}
     >
-      {/* {hasIcon && <span className={iconMode}>{icon}</span>}
-      {hasIcon
-        ? <span className={"btnIcon--withIconText"}>{label}</span>
-        : {label}
-      } */}
       {hasIcon ? (
         <div>
+          {/* <img src={icon} className={iconMode} alt="" /> */}
           <span className={iconMode}>{icon}</span>
           <span className={"btnIcon--withIconText"}>{label}</span>
         </div>

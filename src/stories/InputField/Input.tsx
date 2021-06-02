@@ -3,7 +3,7 @@ import "./input.css";
 import { Button } from "../Button/Button";
 
 export interface InputFieldProps {
-  value?: string;
+  id?: string;
   type?: "circle" | "rounded" | "slightlyRounded" | "box";
   border?: string;
   width?: string;
@@ -11,7 +11,7 @@ export interface InputFieldProps {
   fontSize?: string;
   color?: string;
   btnLabel?: string;
-  btnBg?: string;
+  btnBgColor?: string;
   btnTextColor?: string;
   hasIcon?: boolean;
   iconBtn?: boolean;
@@ -20,7 +20,7 @@ export interface InputFieldProps {
 }
 
 export const InputField: React.FC<InputFieldProps> = ({
-  value = "",
+  id = "",
   type,
   border,
   backgroundColor,
@@ -28,17 +28,19 @@ export const InputField: React.FC<InputFieldProps> = ({
   fontSize,
   color,
   btnLabel,
-  btnBg,
+  btnBgColor,
   btnTextColor,
   hasIcon = false,
   iconBtn = false,
   icon,
   ...props
 }) => {
+
   return (
     <div className={"box"}>
       <input
         type="text"
+        id={id}
         className={["inputStyle", `inputStyle--${type}`].join(" ")}
         style={{ width, backgroundColor, fontSize, color, border }}
         {...props}
@@ -48,7 +50,8 @@ export const InputField: React.FC<InputFieldProps> = ({
           primary
           type={type}
           label={btnLabel}
-          backgroundColor={btnBg}
+          fontSize={fontSize}
+          backgroundColor={btnBgColor}
           color={btnTextColor}
           hasIcon={hasIcon}
           iconBtn={iconBtn}

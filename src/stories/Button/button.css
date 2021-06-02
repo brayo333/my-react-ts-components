@@ -1,3 +1,7 @@
+button:focus {
+    outline: none;
+}
+
 .buttonStyle {
   box-sizing: border-box;
   padding: 10px 20px;

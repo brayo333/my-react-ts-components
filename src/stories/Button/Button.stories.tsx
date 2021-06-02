@@ -38,7 +38,7 @@ export const WithIcon = Template.bind({});
 WithIcon.args = {
   type: "rounded",
   hasIcon: true,
-  icon: <SearchIcon /> ,
+  icon: <SearchIcon />,
   label: "Search",
 };
 

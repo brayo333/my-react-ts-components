@@ -7,6 +7,7 @@ export interface ButtonProps {
   border?: string;
   width?: string;
   backgroundColor?: string;
+  fontSize?: string;
   color?: string;
   label?: string;
   hasIcon?: boolean;
@@ -21,6 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   border,
   backgroundColor,
   width,
+  fontSize,
   color,
   label,
   hasIcon = false,
@@ -29,20 +31,19 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const mode = primary ? "buttonStyle--primary" : "buttonStyle--secondary";
-  const iconMode = iconBtn ? "btnIcon--iconBtn" : "btnIcon--withIcon";
+  const iconMode = iconBtn ? "" : "btnIcon--withIcon";
 
   return (
     <button
       type="button"
       className={["buttonStyle", `buttonStyle--${type}`, mode].join(" ")}
-      style={{ width, backgroundColor, color, border }}
+      style={{ width, backgroundColor, fontSize, color, border }}
       {...props}
     >
       {hasIcon ? (
-        <div>
-          {/* <img src={icon} className={iconMode} alt="" /> */}
-          <span className={iconMode}>{icon}</span>
-          <span className={"btnIcon--withIconText"}>{label}</span>
+        <div className={"btnIcon--div"}>
+          <span className={["btnIcon", iconMode].join(" ")}>{icon}</span>
+          <span>{label}</span>
         </div>
       ) : (
         <>{label}</>

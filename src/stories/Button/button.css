@@ -32,6 +32,9 @@ button:focus {
 .buttonStyle--box {
   border-radius: 0;
 }
+.buttonStyle--line {
+  border-radius: 0;
+}
 
 
 .btnIcon--div {

@@ -2,10 +2,12 @@ import React from "react";
 import "./button.css";
 
 export interface ButtonProps {
+  id?: string;
   primary?: boolean;
-  type?: "circle" | "rounded" | "slightlyRounded" | "box";
+  option?: "circle" | "rounded" | "slightlyRounded" | "box" | "line";
   border?: string;
   width?: string;
+  padding?: string;
   backgroundColor?: string;
   fontSize?: string;
   color?: string;
@@ -17,11 +19,13 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
+  id="",
   primary = true,
-  type,
+  option,
   border,
   backgroundColor,
   width,
+  padding,
   fontSize,
   color,
   label,
@@ -35,9 +39,10 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      id={id}
       type="button"
-      className={["buttonStyle", `buttonStyle--${type}`, mode].join(" ")}
-      style={{ width, backgroundColor, fontSize, color, border }}
+      className={["buttonStyle", `buttonStyle--${option}`, mode].join(" ")}
+      style={{ width, padding, backgroundColor, fontSize, color, border }}
       {...props}
     >
       {hasIcon ? (

@@ -1,46 +1,58 @@
 import { Story, Meta } from "@storybook/react";
 
-import { InputField, InputFieldProps } from "./Input";
+import { InputWithButton, InputWithButtonProps } from "./InputWithButton";
 import { ReactComponent as SearchIcon } from '../assets/myIcons/search.svg';
 
 export default {
-  title: "Input Field",
-  component: InputField,
+  title: "Input With Button",
+  component: InputWithButton,
   argTypes: {
     backgroundColor: { control: "color" },
     color: { control: "color" },
   },
 } as Meta;
 
-const Template: Story<InputFieldProps> = (args) => (
-  <InputField {...args} />
+const Template: Story<InputWithButtonProps> = (args) => (
+  <InputWithButton {...args} />
 );
 
 export const Rounded = Template.bind({});
 Rounded.args = {
-  type: "rounded",
+  option: "rounded",
+  backgroundColor: "#f5f5f6",
   btnLabel: "Search",
   hasIcon: true,
   icon: <SearchIcon />,
 };
 export const SlightlyRounded = Template.bind({});
 SlightlyRounded.args = {
-  type: "slightlyRounded",
+  option: "slightlyRounded",
+  backgroundColor: "#f5f5f6",
   btnLabel: "Search",
   hasIcon: true,
   icon: <SearchIcon />,
 };
 export const Box = Template.bind({});
 Box.args = {
-  type: "box",
+  option: "box",
+  backgroundColor: "#f5f5f6",
   btnLabel: "Search",
   hasIcon: true,
   icon: <SearchIcon />,
 };
 export const WithIconButton = Template.bind({});
 WithIconButton.args = {
-  type: "circle",
+  option: "rounded",
+  backgroundColor: "#f5f5f6",
   hasIcon: true,
   iconBtn: true,
+  icon: <SearchIcon />,
+};
+export const Line = Template.bind({});
+Line.args = {
+  option: "line",
+  backgroundColor: "transparent",
+  btnLabel: "Search",
+  hasIcon: true,
   icon: <SearchIcon />,
 };

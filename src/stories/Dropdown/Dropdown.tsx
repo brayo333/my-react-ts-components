@@ -30,16 +30,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
   ...props
 }) => {
   return (
-    <div className={"box"}>
+    <div
+      className={["dropdownStyle", `dropdownStyle--${option}`].join(" ")}
+      style={{ border, boxShadow, width, backgroundColor }}
+    >
       <select
         id={id}
         name={name}
-        className={["dropdownStyle", `dropdownStyle--${option}`].join(" ")}
         style={{
-          border,
-          boxShadow,
-          width,
-          backgroundColor,
           padding,
           fontSize,
           color,
@@ -49,10 +47,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
         <option value="Option 1">Option 1</option>
         <option value="Option 2">Option 2</option>
         <option value="Option 3">Option 3</option>
+        <option value="Option length">
+          Option that has too long of a value to fitlong of a value to fit
+        </option>
       </select>
-      <div className={"buttonBox"}>
-        <ArrowDown />
-      </div>
+      <span className={"focus"}></span>
     </div>
   );
 };

@@ -1,0 +1,72 @@
+:root {
+  --checkbox-border: #df3d39;
+  --checkbox-unchecked-background: transparent;
+  --checkbox-checked-background: #df3d39;
+  --checkbox-tick: #f5f5f6;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+label .checkboxStyle {
+  content: "";
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  border: 1px solid var(--checkbox-border);
+  background-color: var(--checkbox-unchecked-background);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+label input:checked ~ .checkboxStyle{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: var(--checkbox-checked-background);
+  border: 1px solid var(--checkbox-checked-background);
+}
+
+/* Checkbox tick */
+label input:checked ~ .checkboxStyle::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 12px;
+  border: solid var(--checkbox-tick);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 1px;
+  left: 6px;
+} 
+
+.checkboxStyle--circle {
+  border-radius: 50%;
+}
+.checkboxStyle--slightlyRounded {
+  border-radius: 5px;
+}
+.checkboxStyle--box {
+  border-radius: 0;
+}

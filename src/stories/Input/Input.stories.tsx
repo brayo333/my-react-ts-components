@@ -46,5 +46,5 @@ SlightlyRoundedBorder.args = {
   option: "slightlyRounded",
   border: "1px solid #000000",
   backgroundColor: "transparent",
-  placeholder: "Jeeeeeeffffff"
+  placeholder: "What you looking for"
 };

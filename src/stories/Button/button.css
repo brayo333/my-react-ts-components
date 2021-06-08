@@ -1,9 +1,9 @@
 :root {
-  --border-color: #df3d39;
-  --primary-bgColor: #df3d39;
-  --secondary-bgColor: transparent;
-  --primary-textColor: #f5f5f6;
-  --secondary-textColor: #df3d39;
+  --btnBorder-color: #df3d39;
+  --btnPrimary-bgColor: #df3d39;
+  --btnSecondary-bgColor: transparent;
+  --btnPrimary-textColor: #f5f5f6;
+  --btnSecondary-textColor: #f5f5f6;
 }
 
 button:focus {
@@ -18,13 +18,13 @@ button:focus {
 
 .buttonStyle--primary {
   border: 0px;
-  background-color: var(--primary-bgColor);
-  color: var(--primary-textColor);
+  background-color: var(--btnPrimary-bgColor);
+  color: var(--btnPrimary-textColor);
 }
 .buttonStyle--secondary {
-  border: 1px solid var(--border-color);
-  background-color: var(--secondary-bgColor);
-  color: var(--secondary-textColor);
+  border: 1px solid var(--btnBorder-color);
+  background-color: var(--btnSecondary-bgColor);
+  color: var(--btnSecondary-textColor);
 }
 
 .buttonStyle--circle {

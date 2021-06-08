@@ -1,3 +1,4 @@
 # Starts Storybook in development mode
 
-### `npm run storybook`
+To view the components run the following command:
+`npm run storybook`

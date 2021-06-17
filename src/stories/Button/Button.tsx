@@ -3,6 +3,7 @@ import "./button.css";
 
 export interface ButtonProps {
   id?: string;
+  className?: string;
   primary?: boolean;
   option?: "circle" | "rounded" | "slightlyRounded" | "box" | "line";
   border?: string;
@@ -20,6 +21,7 @@ export interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   id="",
+  className,
   primary = true,
   option,
   border,
@@ -41,7 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       id={id}
       type="button"
-      className={["buttonStyle", `buttonStyle--${option}`, mode].join(" ")}
+      className={["buttonStyle", `buttonStyle--${option}`, className, mode].join(" ")}
       style={{ width, padding, backgroundColor, fontSize, color, border }}
       {...props}
     >

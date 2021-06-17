@@ -3,6 +3,7 @@ import "./input.css";
 
 export interface InputProps {
   id?: string;
+  className?: string;
   name?: string;
   type?: string;
   option?: "circle" | "rounded" | "slightlyRounded" | "box" | "line";
@@ -19,6 +20,7 @@ export interface InputProps {
 
 export const Input: React.FC<InputProps> = ({
   id = "",
+  className,
   name = "",
   type,
   option,
@@ -38,7 +40,7 @@ export const Input: React.FC<InputProps> = ({
       name={name}
       type={type}
       placeholder={placeholder}
-      className={["inputStyle", `inputStyle--${option}`].join(" ")}
+      className={["inputStyle", `inputStyle--${option}`, className].join(" ")}
       style={{ border, width, boxShadow, backgroundColor, fontSize, color }}
       {...props}
     />

@@ -4,6 +4,7 @@ import { ReactComponent as ArrowDown } from "../assets/myIcons/arrow_down.svg";
 
 export interface DropdownProps {
   id?: string;
+  className?: string;
   name?: string;
   border?: string;
   boxShadow?: string;
@@ -18,6 +19,7 @@ export interface DropdownProps {
 
 export const Dropdown: React.FC<DropdownProps> = ({
   id = "",
+  className,
   name = "",
   border,
   boxShadow,
@@ -31,7 +33,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   return (
     <div
-      className={["dropdownStyle", `dropdownStyle--${option}`].join(" ")}
+      className={["dropdownStyle", `dropdownStyle--${option}`, className].join(" ")}
       style={{ border, boxShadow, width, backgroundColor }}
     >
       <select
